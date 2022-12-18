@@ -1,0 +1,174 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Petru-Stefan Vasian , Military Technical Academy Ferdinand I, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.37.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.6.0
+Target DLL:      CMSIS_AGDI.dll V1.33.12.0
+Dialog DLL:      TARMCM1.DLL V1.14.6.0
+ 
+<h2>Project:</h2>
+C:\Users\Vasian Petru-Stefan\Desktop\TemaMicro\TemaMicro\Tema.uvprojx
+Project File Date:  12/13/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+compiling system_MKL25Z4.c...
+main.c(1): warning: In file included from...
+./Adc.h(10): warning: no newline at end of file [-Wnewline-eof]
+void channel_handler(uint16_t);
+                               ^
+main.c(2): warning: In file included from...
+./uart.h(3): warning: // comments are not allowed in this language [-Wcomment]
+void UART0_Transmit(uint8_t data); // Functie folostia pentru a trimite un octet catre interfata UART
+                                   ^
+./uart.h(6): warning: no newline at end of file [-Wnewline-eof]
+void UART0_IRQHandler(void); // Handler-ul de intreruperi
+                                                         ^
+3 warnings generated.
+compiling main.c...
+uart.c(1): warning: In file included from...
+./uart.h(3): warning: // comments are not allowed in this language [-Wcomment]
+void UART0_Transmit(uint8_t data); // Functie folostia pentru a trimite un octet catre interfata UART
+                                   ^
+./uart.h(6): warning: no newline at end of file [-Wnewline-eof]
+void UART0_IRQHandler(void); // Handler-ul de intreruperi
+                                                         ^
+uart.c(2): warning: In file included from...
+./Adc.h(10): warning: no newline at end of file [-Wnewline-eof]
+void channel_handler(uint16_t);
+                               ^
+uart.c(8): warning: // comments are not allowed in this language [-Wcomment]
+        //Punem in asteptare pana cand registrul de transmisie a datelor nu este gol
+        ^
+uart.c(9): warning: while loop has empty body [-Wempty-body]
+        while(!(UART0->S1 & UART0_S1_TDRE_MASK));
+                                                ^
+uart.c(9): note: put the semicolon on a separate line to silence this warning
+uart.c(17): warning: while loop has empty body [-Wempty-body]
+        while(!(UART0->S1 & UART0_S1_RDRF_MASK));
+                                                ^
+uart.c(17): note: put the semicolon on a separate line to silence this warning
+uart.c(47): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        uint32_t osr = 15; // Over-Sampling Rate (numarul de esantioane luate per bit-time)
+                 ^
+uart.c(91): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+uart.c(4): warning: no previous extern declaration for non-static variable 'read_c' [-Wmissing-variable-declarations]
+char read_c;
+     ^
+uart.c(4): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char read_c;
+^
+9 warnings generated.
+compiling uart.c...
+gpio.c(2): warning: In file included from...
+./uart.h(3): warning: // comments are not allowed in this language [-Wcomment]
+void UART0_Transmit(uint8_t data); // Functie folostia pentru a trimite un octet catre interfata UART
+                                   ^
+./uart.h(6): warning: no newline at end of file [-Wnewline-eof]
+void UART0_IRQHandler(void); // Handler-ul de intreruperi
+                                                         ^
+gpio.c(3): warning: // comments are not allowed in this language [-Wcomment]
+#define SWITCH_PIN (12) // PORT A
+                        ^
+gpio.c(52): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+4 warnings generated.
+compiling gpio.c...
+Adc.c(1): warning: In file included from...
+./Adc.h(10): warning: no newline at end of file [-Wnewline-eof]
+void channel_handler(uint16_t);
+                               ^
+Adc.c(2): warning: In file included from...
+./uart.h(3): warning: // comments are not allowed in this language [-Wcomment]
+void UART0_Transmit(uint8_t data); // Functie folostia pentru a trimite un octet catre interfata UART
+                                   ^
+./uart.h(6): warning: no newline at end of file [-Wnewline-eof]
+void UART0_IRQHandler(void); // Handler-ul de intreruperi
+                                                         ^
+Adc.c(5): warning: // comments are not allowed in this language [-Wcomment]
+#define SOUND_CHANNEL (11) //PORT C PIN 2
+                           ^
+Adc.c(19): warning: no previous extern declaration for non-static variable 'switch_rgb_sensor' [-Wmissing-variable-declarations]
+uint8_t switch_rgb_sensor=1;
+        ^
+Adc.c(19): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8_t switch_rgb_sensor=1;
+^
+Adc.c(84): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        uint16_t calibration_var = 0x0000;
+                 ^
+Adc.c(220): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        uint8_t c1=(uint8_t)dbValue%10;
+                ^
+Adc.c(258): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        uint8_t c1=(uint8_t)value%10;
+                ^
+Adc.c(13): warning: no previous extern declaration for non-static variable 'state' [-Wmissing-variable-declarations]
+uint8_t state;
+        ^
+Adc.c(13): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8_t state;
+^
+Adc.c(18): warning: no previous extern declaration for non-static variable 'receive' [-Wmissing-variable-declarations]
+uint8_t receive;
+        ^
+Adc.c(18): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8_t receive;
+^
+10 warnings generated.
+compiling Adc.c...
+assembling startup_MKL25Z4.s...
+linking...
+Program Size: Code=7564 RO-data=420 RW-data=4 ZI-data=360  
+".\Objects\Tema.axf" - 0 Error(s), 26 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.Kinetis_KLxx_DFP.1.15.0.pack
+                Keil.Kinetis_KLxx_DFP.1.15.0
+                NXP Kinetis KLxx Series Device Support and Examples
+   * Component: Startup Version: 2.5.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/MKL25Z128xxx4
+  ./RTE/_Target_1
+  C:/Users/Vasian Petru-Stefan/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/Vasian Petru-Stefan/AppData/Local/Arm/Packs/Keil/Kinetis_KLxx_DFP/1.15.0/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:Startup:2.5.0
+      Include file:  Device/Source/system_MKL25Z4.h
+      Source file:   Device/Source/ARM/startup_MKL25Z4.s
+      Source file:   Device/Source/system_MKL25Z4.c
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
